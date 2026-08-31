@@ -1,0 +1,1 @@
+The goal of this project is to build a solution to a real-world problem but i also want to learn how to build AI-powered systems and get better at it. So don't rush to completion and explain things properly.

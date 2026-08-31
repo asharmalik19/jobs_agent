@@ -1,0 +1,58 @@
+{
+  "_comment": "Hard constraints. Code reads this; no LLM involved. Edit freely.",
+  "based_in": "Pakistan",
+  "authorized_to_work_in": [
+    "Pakistan"
+  ],
+  "willing_to_relocate": "prefer_remote",
+  "acceptable_buckets": [
+    "remote_global",
+    "remote_region_maybe",
+    "remote_unclear",
+    "unknown_location",
+    "relocation_possible"
+  ],
+  "max_years_required": 3,
+  "exclude_departments": [
+    "account",
+    "alliances",
+    "channel",
+    "commercial",
+    "customer success",
+    "finance",
+    "go to market",
+    "gtm",
+    "legal",
+    "marketing",
+    "people",
+    "recruit",
+    "revenue",
+    "sales",
+    "support operations"
+  ],
+  "exclude_title_patterns": [
+    "\\b(VP|Vice President|Director|Head of|Chief)\\b",
+    "\\bintern(ship)?\\b",
+    "\\bPhD\\b",
+    "manager,? (sales|account)"
+  ],
+  "require_no_clearance": true,
+  "authorized_region_codes": [
+    "pk"
+  ],
+  "bucket_priority": {
+    "remote_global": 0,
+    "remote_region_maybe": 1,
+    "remote_unclear": 2,
+    "unknown_location": 3,
+    "relocation_possible": 4
+  },
+  "exclude_title_roles": [
+    "\\b(Account Executive|SDR|BDR|Sales (Rep|Manager|Engineer|Director)|Quota)\\b",
+    "\\b(Recruiter|Sourcer|Talent|Payroll|Benefits|Accountant|Bookkeep|Controller)\\b",
+    "\\b(Customer Success|Support Specialist|Community Support|Renewals)\\b",
+    "\\b(Brand|Content|Social Media|Communications|Copywriter|Designer Advocate)\\b"
+  ],
+  "max_age_days": null,
+  "_note_max_age": "off on purpose: ATS APIs only list open roles, so old posted_at = evergreen req, not stale"
+}
