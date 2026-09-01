@@ -1,0 +1,291 @@
+[
+  {
+    "name": "Careem",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "careem"
+    },
+    "careers_url": "https://careers.careem.com/",
+    "tier": 1,
+    "notes": "Uber-owned, Dubai HQ + big Karachi/Lahore eng org. Verified ATS: 19 roles."
+  },
+  {
+    "name": "Educative",
+    "ats": {
+      "kind": "lever",
+      "token": "educative"
+    },
+    "careers_url": "https://www.educative.io/careers",
+    "tier": 1,
+    "notes": "Dev-education product, Seattle+Lahore. Verified ATS: 11 roles."
+  },
+  {
+    "name": "Tajir",
+    "ats": {
+      "kind": "ashby",
+      "token": "tajir"
+    },
+    "careers_url": "https://tajir.pk/careers",
+    "tier": 1,
+    "notes": "B2B retail marketplace, YC-backed. Verified ATS: 1 role."
+  },
+  {
+    "name": "Motive",
+    "ats": null,
+    "careers_url": "https://gomotive.com/company/careers/",
+    "tier": 1,
+    "notes": "ex-KeepTruckin. Large Islamabad/Lahore eng org, strong comp. Already appears in the remote sweep."
+  },
+  {
+    "name": "Securiti.ai",
+    "ats": null,
+    "careers_url": "https://securiti.ai/company/careers/",
+    "tier": 1,
+    "notes": "Data-security unicorn, heavy AI/ML work in Karachi + Islamabad."
+  },
+  {
+    "name": "Bazaar Technologies",
+    "ats": null,
+    "careers_url": "https://careers.bazaartech.com/",
+    "tier": 1,
+    "notes": "B2B commerce, one of the better-regarded eng orgs in Karachi."
+  },
+  {
+    "name": "Retailo",
+    "ats": null,
+    "careers_url": "https://www.retailo.co/careers",
+    "tier": 1,
+    "notes": "B2B retail, MENAP. Karachi eng."
+  },
+  {
+    "name": "Abhi",
+    "ats": null,
+    "careers_url": "https://www.abhi.com.pk/careers",
+    "tier": 1,
+    "notes": "Fintech, earned-wage access."
+  },
+  {
+    "name": "PostEx",
+    "ats": null,
+    "careers_url": "https://postex.pk/careers",
+    "tier": 1,
+    "notes": "Logistics + fintech, acquired Call Courier."
+  },
+  {
+    "name": "SadaPay",
+    "ats": null,
+    "careers_url": "https://sadapay.pk/careers/",
+    "tier": 1,
+    "notes": "Fintech, now KudaBank-owned. Historically strong remote-first eng culture."
+  },
+  {
+    "name": "NayaPay",
+    "ats": null,
+    "careers_url": "https://www.nayapay.com/careers",
+    "tier": 1,
+    "notes": "Fintech / EMI licence."
+  },
+  {
+    "name": "Arbisoft",
+    "ats": null,
+    "careers_url": "https://arbisoft.com/careers",
+    "tier": 1,
+    "notes": "Lahore. Builds and maintains large education platforms (Coursera/edX ecosystem)."
+  },
+  {
+    "name": "Emumba",
+    "ats": null,
+    "careers_url": "https://emumba.com/careers/",
+    "tier": 1,
+    "notes": "Islamabad. Cloud/infra + open-source contributions."
+  },
+  {
+    "name": "VentureDive",
+    "ats": null,
+    "careers_url": "https://venturedive.com/careers/",
+    "tier": 1,
+    "notes": "Karachi. Product studio, spun out Airlift/Dot&Line."
+  },
+  {
+    "name": "Antematter",
+    "ats": null,
+    "careers_url": "https://antematter.io/careers",
+    "tier": 1,
+    "notes": "Small, high-bar. Blockchain + AI engineering."
+  },
+  {
+    "name": "Cowlar",
+    "ats": null,
+    "careers_url": "https://cowlar.com/careers",
+    "tier": 1,
+    "notes": "YC-backed IoT/ML hardware, Islamabad."
+  },
+  {
+    "name": "Dubizzle Labs (EMPG/Zameen)",
+    "ats": null,
+    "careers_url": "https://dubizzlelabs.com/careers/",
+    "tier": 2,
+    "notes": "Lahore tech hub for Zameen/Bayut/OLX MENA. Large eng org."
+  },
+  {
+    "name": "Daraz",
+    "ats": null,
+    "careers_url": "https://careers.daraz.pk/",
+    "tier": 2,
+    "notes": "Alibaba-owned e-commerce. Large engineering org across Karachi/Lahore."
+  },
+  {
+    "name": "10Pearls",
+    "ats": null,
+    "careers_url": "https://10pearls.com/careers/",
+    "tier": 2,
+    "notes": "Karachi/Lahore. Digital product services, US clients."
+  },
+  {
+    "name": "Confiz",
+    "ats": null,
+    "careers_url": "https://www.confiz.com/careers/",
+    "tier": 2,
+    "notes": "Lahore. Microsoft-heavy stack, some data/AI work."
+  },
+  {
+    "name": "Systems Limited",
+    "ats": null,
+    "careers_url": "https://www.systemsltd.com/careers",
+    "tier": 2,
+    "notes": "Largest listed PK IT firm. Enterprise services and consulting."
+  },
+  {
+    "name": "Netsol Technologies",
+    "ats": null,
+    "careers_url": "https://netsoltech.com/careers/",
+    "tier": 2,
+    "notes": "Lahore. Asset-finance and leasing software."
+  },
+  {
+    "name": "Contour Software",
+    "ats": null,
+    "careers_url": "https://contour-software.com/careers/",
+    "tier": 2,
+    "notes": "Constellation Software's PK arm. Many independent product divisions."
+  },
+  {
+    "name": "Folio3",
+    "ats": null,
+    "careers_url": "https://www.folio3.com/careers/",
+    "tier": 2,
+    "notes": "Karachi. Services, has an AI/ML practice."
+  },
+  {
+    "name": "Tkxel",
+    "ats": null,
+    "careers_url": "https://tkxel.com/careers/",
+    "tier": 2,
+    "notes": "Lahore. Services, US clients."
+  },
+  {
+    "name": "Tintash",
+    "ats": null,
+    "careers_url": "https://tintash.com/careers/",
+    "tier": 2,
+    "notes": "Lahore. Product-dev studio, decent engineering reputation."
+  },
+  {
+    "name": "Xavor",
+    "ats": null,
+    "careers_url": "https://www.xavor.com/careers/",
+    "tier": 2,
+    "notes": "Services, healthcare/life-sciences focus."
+  },
+  {
+    "name": "Trax",
+    "ats": null,
+    "careers_url": "https://trax.pk/careers/",
+    "tier": 2,
+    "notes": "Logistics tech, Karachi."
+  },
+  {
+    "name": "Bykea",
+    "ats": null,
+    "careers_url": "https://bykea.com/careers/",
+    "tier": 2,
+    "notes": "Ride-hailing/logistics, Karachi."
+  },
+  {
+    "name": "Krave Mart",
+    "ats": null,
+    "careers_url": "https://kravemart.com/careers",
+    "tier": 2,
+    "notes": "Quick-commerce, Karachi."
+  },
+  {
+    "name": "Dastgyr",
+    "ats": null,
+    "careers_url": "https://dastgyr.com/careers",
+    "tier": 2,
+    "notes": "B2B marketplace, Karachi."
+  },
+  {
+    "name": "Sastaticket.pk",
+    "ats": null,
+    "careers_url": "https://www.sastaticket.pk/careers",
+    "tier": 2,
+    "notes": "Travel tech, Karachi."
+  },
+  {
+    "name": "Haball",
+    "ats": null,
+    "careers_url": "https://haball.com/careers",
+    "tier": 2,
+    "notes": "B2B payments infrastructure."
+  },
+  {
+    "name": "Oraan",
+    "ats": null,
+    "careers_url": "https://oraan.com/careers",
+    "tier": 2,
+    "notes": "Fintech, women-focused savings."
+  },
+  {
+    "name": "Salesflo",
+    "ats": null,
+    "careers_url": "https://salesflo.com/careers/",
+    "tier": 2,
+    "notes": "Retail-execution SaaS, Karachi."
+  },
+  {
+    "name": "Afiniti",
+    "ats": null,
+    "careers_url": "https://www.afiniti.com/careers",
+    "tier": 2,
+    "notes": "AI-driven call routing. Lahore/Karachi presence, ML-heavy work."
+  },
+  {
+    "name": "Telenor Pakistan",
+    "ats": null,
+    "careers_url": "https://www.telenor.com.pk/careers/",
+    "tier": 3,
+    "notes": "Telco. Data and analytics roles."
+  },
+  {
+    "name": "Jazz (VEON)",
+    "ats": null,
+    "careers_url": "https://www.jazz.com.pk/careers",
+    "tier": 3,
+    "notes": "Telco. Data and analytics roles."
+  },
+  {
+    "name": "S&P Global Pakistan",
+    "ats": null,
+    "careers_url": "https://www.spglobal.com/en/careers",
+    "tier": 3,
+    "notes": "Islamabad delivery centre. Global ATS is huge; filter hard by location."
+  },
+  {
+    "name": "Devsinc",
+    "ats": null,
+    "careers_url": "https://devsinc.com/careers/",
+    "tier": 3,
+    "notes": "Large services firm, Lahore. High hiring volume across many stacks."
+  }
+]

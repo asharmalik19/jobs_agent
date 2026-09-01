@@ -1,0 +1,312 @@
+[
+  {
+    "name": "gitlab",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "gitlab"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "canonical",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "canonical"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "grafanalabs",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "grafanalabs"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "remotecom",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "remotecom"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "turing",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "turing"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "elastic",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "elastic"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "mozilla",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "mozilla"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "cloudflare",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "cloudflare"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "datadog",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "datadog"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "anthropic",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "anthropic"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "databricks",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "databricks"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "scaleai",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "scaleai"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "figma",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "figma"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "vercel",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "vercel"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "faire",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "faire"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "stripe",
+    "ats": {
+      "kind": "greenhouse",
+      "token": "stripe"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "posthog",
+    "ats": {
+      "kind": "ashby",
+      "token": "posthog"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "supabase",
+    "ats": {
+      "kind": "ashby",
+      "token": "supabase"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "railway",
+    "ats": {
+      "kind": "ashby",
+      "token": "railway"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "replit",
+    "ats": {
+      "kind": "ashby",
+      "token": "replit"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "linear",
+    "ats": {
+      "kind": "ashby",
+      "token": "linear"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "resend",
+    "ats": {
+      "kind": "ashby",
+      "token": "resend"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "neon",
+    "ats": {
+      "kind": "ashby",
+      "token": "neon"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "openai",
+    "ats": {
+      "kind": "ashby",
+      "token": "openai"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "cohere",
+    "ats": {
+      "kind": "ashby",
+      "token": "cohere"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "perplexity",
+    "ats": {
+      "kind": "ashby",
+      "token": "perplexity"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "harvey",
+    "ats": {
+      "kind": "ashby",
+      "token": "harvey"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "sierra",
+    "ats": {
+      "kind": "ashby",
+      "token": "sierra"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "notion",
+    "ats": {
+      "kind": "ashby",
+      "token": "notion"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "toptal",
+    "ats": {
+      "kind": "lever",
+      "token": "toptal"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  },
+  {
+    "name": "waabi",
+    "ats": {
+      "kind": "lever",
+      "token": "waabi"
+    },
+    "careers_url": "",
+    "tier": 1,
+    "notes": "hand-curated seed, migrated from the original fetch_jobs.py list"
+  }
+]

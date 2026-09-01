@@ -8,3 +8,15 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Pipeline artifacts (regenerable; jobs_all.json is ~64MB)
+jobs_all.json
+jobs_agg.json
+jobs.json
+jobs_filtered.json
+shortlist.json
+seen.sqlite
+
+# Your actual CV-derived profile. Contains career details and self-assessed gaps,
+# and this repo is public -- commit capabilities.example.json instead.
+capabilities.json

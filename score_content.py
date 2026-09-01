@@ -72,7 +72,7 @@ def score(job):
 
 
 if __name__ == "__main__":
-    jobs = json.load(open("jobs.json"))
+    jobs = json.load(open("jobs_all.json"))
     scored = []
     for j in jobs:
         pts, hits, flags = score(j)

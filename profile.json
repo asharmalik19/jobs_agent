@@ -6,6 +6,7 @@
   ],
   "willing_to_relocate": "prefer_remote",
   "acceptable_buckets": [
+    "local",
     "remote_global",
     "remote_region_maybe",
     "remote_unclear",
@@ -40,7 +41,9 @@
   "authorized_region_codes": [
     "pk"
   ],
+  "_note_buckets": "local and remote_global are the same top tier: a Karachi job and a hire-anywhere job are both immediately takeable. Everything below needs something to go right first.",
   "bucket_priority": {
+    "local": 0,
     "remote_global": 0,
     "remote_region_maybe": 1,
     "remote_unclear": 2,
@@ -48,11 +51,33 @@
     "relocation_possible": 4
   },
   "exclude_title_roles": [
-    "\\b(Account Executive|SDR|BDR|Sales (Rep|Manager|Engineer|Director)|Quota)\\b",
-    "\\b(Recruiter|Sourcer|Talent|Payroll|Benefits|Accountant|Bookkeep|Controller)\\b",
+    "\\b(Account Executive|SDR|BDR|Sales|Salesman|Telesales|Telemarket\\w*|Quota)\\b",
+    "\\b(Cold Call\\w*|Call Cent(er|re)|Customer (Service|Care|Experience)|CSR)\\b",
+    "\\b(Recruiter|Sourcer|Talent|Payroll|Benefits|Accountant|Bookkeep\\w*|Controller)\\b",
+    "\\b(Accounts? (Officer|Assistant|Executive|Manager)|Audit\\w*|Taxation)\\b",
+    "\\b(Receptionist|Admin(istrative)? (Assistant|Officer)|Office (Boy|Assistant)|Secretary)\\b",
     "\\b(Customer Success|Support Specialist|Community Support|Renewals)\\b",
-    "\\b(Brand|Content|Social Media|Communications|Copywriter|Designer Advocate)\\b"
+    "\\b(Brand|Content Writer|Social Media|Communications|Copywriter|SEO)\\b",
+    "\\b(Graphic Designer|Video Editor|Animator|Illustrator|Photographer)\\b",
+    "\\b(Data Entry|Typist|Transcription)\\b",
+    "\\b(Teacher|Lecturer|Tutor|Principal|Instructor|Professor)\\b",
+    "\\b(Nurse|Doctor|Physician|Pharmacist|Physiotherap\\w+|Lab Technician)\\b",
+    "\\b(Chef|Cook|Waiter|Housekeep\\w+|Driver|Rider|Guard|Electrician|Plumber)\\b",
+    "\\b(Horticultur\\w+|Agricultur\\w+|Livestock|Textile|Merchandiser)\\b",
+    "\\b(Civil|HSE|Mechanical|Electrical|Chemical|Structural|Petroleum|Mining|QA ?/ ?QC|Site) Engineer\\b"
   ],
   "max_age_days": null,
-  "_note_max_age": "off on purpose: ATS APIs only list open roles, so old posted_at = evergreen req, not stale"
+  "_note_max_age": "off on purpose: ATS APIs only list open roles, so old posted_at = evergreen req, not stale",
+  "_note_title_roles": "Board sources (mustakbil, rozee) carry NO department field, so exclude_departments -- the biggest filter on ATS data -- is inert for them. Title patterns are the only cheap gate there, which is why this list covers non-technical work broadly.",
+  "_note_require_title": "Applied ONLY to jobs with no department field, i.e. board sources. On a general-purpose local board most postings are non-technical, so an allowlist is far higher precision than chasing an endless denylist. ATS jobs are unaffected -- they have departments.",
+  "require_title_patterns_when_no_department": [
+    "\\b(engineer|engineering|developer|programmer|architect|SDE|SWE)\\b",
+    "\\b(AI|ML|LLM|NLP|MLOps|machine learning|deep learning|computer vision|generative)\\b",
+    "\\b(data (scientist|engineer|analyst)|scientist|research(er)?)\\b",
+    "\\b(backend|back.end|frontend|front.end|full.?stack|mobile|android|iOS)\\b",
+    "\\b(DevOps|SRE|platform|infrastructure|cloud|site reliability)\\b",
+    "\\b(technical lead|tech lead|CTO|principal|staff)\\b",
+    "\\b(automation|SDET|QA engineer|test engineer)\\b",
+    "\\b(product manager|technical product|solutions? (engineer|architect))\\b"
+  ]
 }

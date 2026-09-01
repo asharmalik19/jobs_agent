@@ -1,31 +1,60 @@
 """What you ask the LLM for, and what you compute yourself.
 
 The LLM fills in observations. Your code turns observations into a decision.
-(Dataclasses so this runs with no deps; swap to pydantic.BaseModel when you
-add them, so you can use client.messages.parse() for schema-validated output.)
+
+Pydantic models rather than dataclasses, so `client.messages.parse()` can
+validate the model's output against this schema before your code ever sees it --
+a malformed response becomes an exception here instead of a wrong verdict later.
+
+The docstrings on each field are NOT decoration: pydantic puts them in the JSON
+schema, the schema goes to the model, and they are the most reliable place to say
+what you want. Anything you would have written into the prompt about a field
+belongs here instead, next to the field.
 """
-from dataclasses import dataclass, field
+from pydantic import BaseModel, Field
 
 
-@dataclass
-class Requirement:
-    requirement: str        # what the JD asks for, in the JD's own words
-    met: bool               # does the candidate meet it
-    jd_quote: str           # VERBATIM line from the JD stating this requirement
-    my_evidence: str        # which capability atom satisfies it ("" if unmet)
+class Requirement(BaseModel):
+    requirement: str = Field(description="What the JD asks for, in the JD's own words.")
+    met: bool = Field(description="Whether the candidate's capabilities satisfy this.")
+    jd_quote: str = Field(description=(
+        "The VERBATIM line from the job description that states this requirement. "
+        "Copy it exactly; do not paraphrase. If you cannot find such a line, "
+        "leave this empty -- an empty quote means the requirement is not credited."))
+    my_evidence: str = Field(default="", description=(
+        "Which specific capability from the candidate profile satisfies this. "
+        "Empty string if unmet. Name the capability; do not describe it generically."))
 
 
-@dataclass
-class Assessment:
-    """Every field is an observation, not a decision."""
-    requirements: list[Requirement] = field(default_factory=list)
-    seniority: str = "at"          # "under" | "at" | "over"
-    years_required: int | None = None
-    domain_fit: int = 0            # 0-5: how close to the target domain
-    trajectory_fit: int = 0        # 0-5: does this move me toward the 2-year goal
-    interview_odds: int = 0        # 0-5: would they realistically interview me
-    anti_signals: list[str] = field(default_factory=list)
-    strongest_objection: str = ""
+class Assessment(BaseModel):
+    """Every field is an OBSERVATION, not a decision.
+
+    Do not output a verdict, a score, or a recommendation anywhere. Scoring is
+    done by code that reads these observations.
+    """
+    requirements: list[Requirement] = Field(default_factory=list, description=(
+        "Every requirement the JD states, met or unmet. Cover the whole JD -- "
+        "omitting the requirements the candidate fails would corrupt the score."))
+    seniority: str = Field(default="at", description=(
+        "'under' if the candidate is below the level sought, 'at' if matched, "
+        "'over' if the role wants someone materially more senior."))
+    years_required: int | None = Field(default=None, description=(
+        "Minimum years of experience the JD demands, or null if unstated."))
+    domain_fit: int = Field(default=0, ge=0, le=5, description=(
+        "0-5: how close this work is to the candidate's target domain."))
+    trajectory_fit: int = Field(default=0, ge=0, le=5, description=(
+        "0-5: how much taking this role would move the candidate toward their "
+        "stated two-year goal."))
+    interview_odds: int = Field(default=0, ge=0, le=5, description=(
+        "0-5: realistically, would this employer interview this candidate? Judge "
+        "the employer's likely behaviour, not the candidate's potential."))
+    anti_signals: list[str] = Field(default_factory=list, description=(
+        "Concrete disqualifiers present in the JD: clearance, PhD requirement, "
+        "onsite-only in an unreachable location, wrong discipline entirely. "
+        "Only include things the JD actually states."))
+    strongest_objection: str = Field(default="", description=(
+        "The single best argument AGAINST the candidate applying. One sentence. "
+        "This is the most useful field in the whole assessment -- do not soften it."))
 
 
 # ---- everything below is YOUR code. No model involved. Tune freely. ----

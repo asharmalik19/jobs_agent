@@ -79,7 +79,7 @@ def canonical_id(job):
 
 
 # Remote scope is encoded in the location string, and every company phrases it
-# differently. These patterns were derived from real strings in jobs.json:
+# differently. These patterns were derived from real strings in jobs_all.json:
 #   Canonical:   "Home based - Worldwide" / "Home Based - APAC" / "Office Based - Taipei"
 #   GitLab:      "Remote, United States" / "Remote, Turkey"
 #   Grafana:     "United States (Remote)"
@@ -91,6 +91,9 @@ REGION_REMOTE = re.compile(r"(home.based|remote)\W*[-,:]?\W*(EMEA|APAC|Americas|
 BARE_REMOTE = re.compile(r"^\s*(remote|distributed|home.based|work from home|wfh)\s*$", re.I)
 ONSITE_WORD = re.compile(r"^\s*(hybrid|in.office|on.?site|office.based)", re.I)
 PINNED_REMOTE = re.compile(r"remote\W*[-,:]\s*[A-Za-z .]+$|[A-Za-z .]+\s*\(\s*remote\s*\)", re.I)
+
+REQUIRE_TITLE = [re.compile(p, re.I)
+                 for p in P.get("require_title_patterns_when_no_department", [])]
 
 # Regions Pakistan is *sometimes* inside, depending on the company's entity setup.
 AMBIGUOUS_REGIONS = re.compile(r"EMEA|APAC|Asia.Pacific|Middle East", re.I)
@@ -114,7 +117,9 @@ def bucket_from_restrictions(job):
     if any(WORLDWIDE_R.search(r) for r in restr):
         return "remote_global"
     if any(re.search(r"\bpakistan\b", r, re.I) for r in restr):
-        return "remote_global"
+        # Restricted to PK specifically -- takeable, but NOT "hires anywhere".
+        # Calling it remote_global would overstate how open the employer is.
+        return "local"
     if any(MY_REGIONS.search(r) for r in restr):
         return "remote_region_maybe"         # "Asia"/"EMEA" — may or may not include PK
     return "remote_geo_locked"               # explicitly restricted elsewhere
@@ -164,22 +169,43 @@ def geo_bucket(job):
     return "onsite_no_support"
 
 
+def bucket_rank(bucket):
+    """Lower is better. Buckets absent from bucket_priority are unacceptable, so
+    they sort last -- which is what makes the dedup below prefer a takeable variant."""
+    return P["bucket_priority"].get(bucket, 99)
+
+
 def hard_filter(jobs):
-    kept, dropped, seen = [], collections.Counter(), {}
+    """Two passes, and the order matters.
+
+    Pass 1 applies the cheap per-job filters and classifies geography.
+    Pass 2 collapses duplicates -- and it has to come SECOND, because choosing the
+    best variant of a role requires knowing every variant's geo_bucket first. Doing
+    it in one pass (as this did originally) meant whichever posting happened to come
+    first in the array won, so a London posting could evict the Worldwide posting of
+    the very same role.
+    """
+    dropped = collections.Counter()
+
+    # ---- pass 1: per-job filters, independent of any other job ----
+    survivors = []
     for j in jobs:
         why = None
-        # --- dedup: same role, many cities ---
-        cid = canonical_id(j)
-        if cid in seen:
-            seen[cid]["also_in"].append(j["location"])
-            why = "duplicate_of_earlier_posting"
         # --- department ---
-        elif any(d in j["department"].lower() for d in P["exclude_departments"]):
+        if any(d in j["department"].lower() for d in P["exclude_departments"]):
             why = "excluded_department"
-        # --- title patterns ---
+        # --- title patterns (denylist) ---
         elif any(re.search(p, j["title"], re.I) for p in
                  P["exclude_title_patterns"] + P.get("exclude_title_roles", [])):
             why = "excluded_title"
+        # --- title allowlist, but ONLY where we have no department to filter on ---
+        # exclude_departments does the heavy lifting on ATS data (2,861 drops on a
+        # 9k sweep). Board sources carry no department at all, so for those the
+        # title is all we have, and on a general-purpose local board an allowlist
+        # is much higher precision than extending the denylist forever.
+        elif REQUIRE_TITLE and not j["department"].strip() and not any(
+                r.search(j["title"]) for r in REQUIRE_TITLE):
+            why = "title_not_technical"
         # --- stale posting (Canonical leaves roles up for years) ---
         elif P.get("max_age_days") and j["posted_at"] and (
                 _age_days(j["posted_at"]) or 0) > P["max_age_days"]:
@@ -193,16 +219,30 @@ def hard_filter(jobs):
 
         j["geo_bucket"] = geo_bucket(j)
         j["also_in"] = []
-        if j["geo_bucket"] not in P["acceptable_buckets"]:
-            dropped[f"geo:{j['geo_bucket']}"] += 1
+        survivors.append(j)
+
+    # ---- pass 2: one entry per role, keeping the most takeable variant ----
+    groups = collections.OrderedDict()
+    for j in survivors:
+        groups.setdefault(canonical_id(j), []).append(j)
+
+    kept = []
+    for variants in groups.values():
+        # tie-break on posted_at so an equally-good but fresher posting wins
+        best = min(variants, key=lambda j: (bucket_rank(j["geo_bucket"]),
+                                            -(int((j["posted_at"] or "0").replace("-", "") or 0))))
+        best["also_in"] = [v["location"] for v in variants if v is not best]
+        dropped["duplicate_of_better_posting"] += len(variants) - 1
+
+        if best["geo_bucket"] not in P["acceptable_buckets"]:
+            dropped[f"geo:{best['geo_bucket']}"] += 1
             continue
-        seen[cid] = j
-        kept.append(j)
+        kept.append(best)
     return kept, dropped
 
 
 if __name__ == "__main__":
-    jobs = json.load(open("jobs.json"))
+    jobs = json.load(open("jobs_all.json"))
     kept, dropped = hard_filter(jobs)
 
     print(f"in:  {len(jobs)}")

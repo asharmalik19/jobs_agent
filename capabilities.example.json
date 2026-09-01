@@ -1,0 +1,53 @@
+{
+  "_README": [
+    "TEMPLATE -- every value below is a placeholder. Nothing here was inferred from",
+    "your CV, because the CV lives outside this repo and its path has not been given.",
+    "",
+    "This file is what the LLM stage matches job requirements against. profile.json",
+    "holds only HARD constraints (geography, seniority ceiling, excluded titles);",
+    "it says nothing about what you can do, so the rubric has nothing to work with",
+    "until this is filled in.",
+    "",
+    "Write capabilities as ATOMS: one concrete, evidenced thing you have built or",
+    "operated. The rubric asks the model to name a specific atom as evidence for",
+    "each JD requirement, and it is instructed to reject vague evidence -- so",
+    "'Python' is a weak atom and 'built a RAG pipeline over Postgres + pgvector",
+    "serving ~50 QPS' is a strong one. Specificity here directly raises the",
+    "quality of the filtering."
+  ],
+
+  "identity": {
+    "current_role": "PLACEHOLDER: e.g. QA Engineer at WellnessLiving",
+    "years_experience": 0,
+    "career_identity_statement": "PLACEHOLDER: the one-paragraph statement from spec.md -- who you are professionally and what you are moving toward.",
+    "two_year_goal": "PLACEHOLDER: used for trajectory_fit. e.g. 'AI engineer building agentic systems at a product company that hires remotely.'"
+  },
+
+  "capabilities": [
+    {
+      "atom": "PLACEHOLDER: e.g. Built an LLM job-filtering pipeline: multi-source ingestion, deterministic geo classification, LLM rubric with quote-audited scoring",
+      "evidence": "PLACEHOLDER: where this is demonstrable -- repo, production system, or work project",
+      "depth": "built | operated in production | prototyped | studied"
+    },
+    {
+      "atom": "PLACEHOLDER: a second capability atom",
+      "evidence": "PLACEHOLDER",
+      "depth": "built"
+    }
+  ],
+
+  "stack": {
+    "strong": ["PLACEHOLDER: languages/tools you would be comfortable being interviewed on"],
+    "working": ["PLACEHOLDER: things you can be productive in with docs open"],
+    "exposure": ["PLACEHOLDER: touched, would not claim in an interview"]
+  },
+
+  "domain_experience": [
+    "PLACEHOLDER: e.g. fitness/wellness SaaS, QA automation, LLM tooling"
+  ],
+
+  "known_gaps": [
+    "PLACEHOLDER: be honest here. Stating gaps makes the model's interview_odds and",
+    "strongest_objection far more useful, and stops it crediting fit you do not have."
+  ]
+}
